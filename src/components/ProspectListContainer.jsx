@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import prospectsService from "../services/prospects";
 import { ProspectList } from "./ProspectsList";
 import { useDebouncedEffect } from "../utils/useDebounce";
@@ -13,10 +13,6 @@ export const ProspectListContainer = () => {
     const response = await prospectsService.fetchProspects(filter);
 
     setProspects(response);
-    console.log({
-      response,
-      filter,
-    });
   }
 
   useDebouncedEffect(() => getProspects(), [filter], 1000);
@@ -30,10 +26,6 @@ export const ProspectListContainer = () => {
   function onChangeFilter(change) {
     setFilter(change.currentTarget.value);
   }
-
-  useEffect(() => {
-    getProspects();
-  }, []);
 
   return (
     <div className="container mx-auto p-4">
