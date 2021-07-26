@@ -25,7 +25,7 @@
   },
   "scripts": {
     "dev": "craco start",
-    "build": "craco build",
+    "build": "NODE_ENV=production craco build",
     "prod:local": "craco build && serve -s build",
     "prod:cloud": "craco build && netlify deploy --prod --open --dir build",
     "prod:cloud:test": "craco build && netlify deploy --open --dir build",
