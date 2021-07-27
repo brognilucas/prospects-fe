@@ -18,3 +18,9 @@ code {
   font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas,
     'Courier New', monospace;
 }
+
+
+.prospect-list {
+  max-height: 500px;
+  overflow-y: scroll;
+}

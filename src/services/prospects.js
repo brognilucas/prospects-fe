@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { BASE_URL } from '../enviroment/enviroment';
 
-const fetchProspects = async (filterName) => {
-    const { data } = await axios.get(`${BASE_URL}/prospects`, { params: { name: filterName } })
+const fetchProspects = async (filter) => {
+    const { data } = await axios.get(`${BASE_URL}/prospects`, { params: filter })
 
     return data.data
 }
